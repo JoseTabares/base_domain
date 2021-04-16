@@ -1,4 +1,4 @@
-Library for manage manage general use cases.
+Library for manage general use cases.
 
 ## Using
 
