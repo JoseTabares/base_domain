@@ -1,4 +1,4 @@
-import 'package:base_models/errors/bad_request_error.dart';
+import 'package:base_models/errors/bad_request_exception.dart';
 
 import 'rule.dart';
 
@@ -12,7 +12,7 @@ class Validator {
     if (reasons.isNotEmpty) {
       var code = '$context.error.badRequest';
       var description = '$context bad request';
-      throw BadRequestError(code, description, reasons);
+      throw BadRequestException(code, description, reasons);
     }
   }
 }

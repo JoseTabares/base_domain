@@ -1,14 +1,29 @@
-# base_domain
+Library for manage manage general use cases.
 
-A new Flutter package project.
+## Using
 
-## Getting Started
+For use use cases
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+```dart
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+import 'package:base_domain/base_domain.dart';
+
+mixin UsersRepository on GetAllRepository<User> {}
+
+mixin UsersUseCase on GetAllUseCase<User>, SaveUseCase<User, User> {}
+
+class UsersUseCaseAdapter
+    with GetAllUseCaseAdapter<User>, SaveUseCaseAdapter<User, User>
+    implements UsersUseCase {
+  final UsersRepository repository;
+
+  UsersUseCaseAdapter(this.repository);
+
+  @override
+  List<Rule<User>> get rules => [
+        cannotBeNull((user) => user.name, 'name', 'Name can not be null'),
+        cannotBeNull((user) => user.lastname, 'lastname', 'Lastname can not be null'),
+      ];
+}
+
+```
