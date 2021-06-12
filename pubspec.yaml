@@ -1,17 +1,17 @@
 name: base_domain
 description: Flutter package for manage general use cases.
-version: 0.0.1
+version: 2.0.0
 repository: https://github.com/JoseTabares/base_domain
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  base_models: ^0.0.2
+  base_models: ^2.0.0
 
 dev_dependencies:
   flutter_test:

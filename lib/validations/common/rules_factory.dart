@@ -3,7 +3,7 @@ import 'package:base_models/errors/reason.dart';
 import '../rule.dart';
 
 Rule<T> customRule<T>(
-  bool Function(T) mapper,
+  bool Function(T? object) mapper,
   String field,
   String message,
 ) {
@@ -14,7 +14,7 @@ Rule<T> customRule<T>(
 }
 
 Rule<T> cannotBeEmpty<T>(
-  String Function(T) mapper,
+  String? Function(T? object) mapper,
   String field,
   String message,
 ) {
@@ -25,7 +25,7 @@ Rule<T> cannotBeEmpty<T>(
 }
 
 Rule<T> cannotBeNull<T>(
-  dynamic Function(T) mapper,
+  dynamic Function(T? object) mapper,
   String field,
   String message,
 ) {
